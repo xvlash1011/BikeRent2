@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!-- saved from url=(0109)http://live.vnpgroup.net/client_server/service.php?w=10279378&web=61bbbda03811c7fb2c71b231424d5eb3&lang=&br=s -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>vChat embed website</title>
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1.0, minimum-scale=1.0">
+   <link rel="stylesheet" href="./slider.css">
+   <script src="./jquery.js.download"></script>
+   <script async="true" src="./vue.js.download"></script>
+   <script src="./slider.js.download"></script>
+   <link href="./css" rel="stylesheet">
+</head>
+<body>
+
+   <div id="web">      
+      <div id="web_top">
+                           <p id="wet_on" style="background-color: #0072BD;" class="face_offline icon_mail_off bwdesktop" onclick="embedFunction.callOffline()" title="Send message"></p>
+                        </div>              
+   </div>
+   
+      
+   <script>
+      
+      var type_omnichanel  = 1;
+      var _data_post = {
+         action : 'callOffline'
+      };
+      parent.postMessage(_data_post, "*");
+      
+      var _datacolor = {
+         action : 'changeColor',
+         color : '#0072BD'
+      };
+      parent.postMessage(_datacolor, "*");
+      
+      /* call omnichanel list or small */
+      var _data_post = {
+         action : 'omnichaneltype'
+      };
+      parent.postMessage(_data_post, "*");
+      
+      // nhận sự kiện ở ngoài bắn vào
+      window.addEventListener("message", function(event) {
+         var _event = event.data || '';
+         if(typeof _event == 'object'){
+            
+            var _action = _event.stype || '';
+            var vl = _event.status || 0;
+            
+            switch(_action){
+               case 'update_status_box':
+                  embedFunction.update_status_box(vl);
+                  break;
+               /* khi click vào tên một ng và add vào tin nhắn và bật boxchat */
+               case 'action_greetingBox':
+                  embedFunction.callOffline(1);
+                  break;
+             }      
+         }
+          
+          
+      });
+      
+      $(function(){
+         if(type_omnichanel == 2){
+            embedFunction.box_open_omnichanel();
+         }
+      })
+      
+      
+   </script>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-92066924-1');
+</script>
+
+
+</body></html>

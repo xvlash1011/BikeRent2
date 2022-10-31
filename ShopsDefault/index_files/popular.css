@@ -1,0 +1,41 @@
+﻿/*================================================
+popular CSS
+==================================================*/
+
+.prd-popular .tb-popular {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+    .prd-popular .tb-popular tr:first-child th {
+        background-color: #0b3639;
+        color: #fff;
+    }
+
+    .prd-popular .tb-popular th, .prd-popular .tb-popular td {
+        padding: 6px 12px;
+    }
+
+    .prd-popular .tb-popular tr{
+        background-color: #e9e9e9;
+    }
+
+    .prd-popular .tb-popular tr:nth-of-type(odd) {
+        background-color: #f6f6f6;
+    }
+
+    .prd-popular .tb-popular .tb-colspan > td {
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    .prd-popular .tb-popular .tb-colspan:nth-child(2n) > td {
+        background-color: #ff7b5b;
+    }
+
+    .prd-popular .tb-popular .tb-colspan:nth-child(2n +1) > td {
+        background-color: #20b266;
+    }
